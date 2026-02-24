@@ -2,10 +2,19 @@
 /* 3.1 GENERAL STYLING */
 /* ============================= */
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     background-color: #f4f4f4;
     font-family: Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3 {
@@ -97,13 +106,16 @@ a {
     border-radius: 8px;
 }
 
+
 /* ============================= */
 /* LINK COLOUR */
 /* ============================= */
+
 .social a {
-        color: white;
-        text-decoration: none; 
-    }
+    color: white;
+    text-decoration: none; 
+}
+
 
 /* ============================= */
 /* CENTER TEXT */
@@ -114,6 +126,7 @@ a {
     list-style-position: inside; /* punkti būs kopā ar tekstu */
     padding-left: 0;             /* lai nav lieks atkāpiens */
 }
+
 
 /* ============================= */
 /* FEATURED SECTION */
@@ -257,6 +270,7 @@ a {
 }
 
 .contact-details {
+    text-align: center;
     background-color: white;
     padding: 20px;
     margin: 20px auto;
@@ -284,6 +298,8 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
+
+    margin-top: auto;
 }
 
 
