@@ -1,57 +1,72 @@
+/* ============================= */
 /* 3.1 GENERAL STYLING */
-/* 3.1.1 Background color and font-family */
+/* ============================= */
+
 body {
     margin: 0;
     background-color: #f4f4f4;
     font-family: Arial, sans-serif;
 }
 
-/* 3.1.2 Global styles for headings, paragraphs, links */
 h1, h2, h3 {
     margin: 0 0 10px;
 }
+
 p {
     margin: 0 0 10px;
 }
+
 a {
     color: #333;
     text-decoration: none;
 }
 
-/* 3.2 NAVIGATION BAR STYLING */
-/* 3.2.1 Background color of nav */
+
+/* ============================= */
+/* 3.2 NAVIGATION BAR */
+/* ============================= */
+
 .navbar {
     background-color: #333;
 }
 
-/* 3.2.2 Menu items with spacing and hover */
-/* 3.2.3 Flex for horizontal alignment */
 .navbar ul {
     list-style: none;
     margin: 0;
     padding: 10px 20px;
-    display: flex;              /* horizontal */
+    display: flex;
 }
+
 .navbar li {
-    margin-right: 20px;         /* spacing */
+    margin-right: 20px;
 }
+
 .navbar a {
     color: white;
     padding: 5px 0;
 }
+
 .navbar a:hover {
-    text-decoration: underline; /* hover effect */
+    text-decoration: underline;
 }
 
-/* 3.3 HERO SECTION STYLING */
-/* 3.3.1 Background gradient */
+/* Active page */
+.navbar a.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+
+/* ============================= */
+/* 3.3 HERO SECTION */
+/* ============================= */
+
 .hero {
     background: linear-gradient(135deg, #ffe4e1, #ffd1ff);
     padding: 60px 20px;
-    text-align: center;         /* 3.3.2 center text and button */
+    text-align: center;
 }
 
-/* 3.3.3 Button styling + hover */
 .hero .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -59,27 +74,143 @@ a {
     color: white;
     border-radius: 4px;
 }
+
 .hero .btn:hover {
     background-color: #555;
 }
 
-/* 3.4 GRID OR FLEXBOX LAYOUTS */
-/* 3.4.1 Use flex for a section with columns */
+
+/* ============================= */
+/* 3.4 THREE COLUMNS */
+/* ============================= */
+
 .three-columns {
     display: flex;
     gap: 20px;
     padding: 20px;
 }
 
-/* 3.4.2 Equal spacing & alignment */
 .three-columns .column {
     flex: 1;
     background-color: white;
     padding: 20px;
+    border-radius: 8px;
 }
 
-/* 3.5 FORM STYLING */
-/* 3.5.1 Inputs with padding, border-radius, spacing */
+
+/* ============================= */
+/* FEATURED SECTION */
+/* ============================= */
+
+.featured {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+/* ============================= */
+/* SERVICES PAGE */
+/* ============================= */
+
+.services {
+    padding: 40px 20px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.service-item h2 {
+    margin-top: 0;
+}
+
+
+/* ============================= */
+/* ABOUT PAGE */
+/* ============================= */
+
+.about {
+    padding: 40px 20px;
+}
+
+.about h1,
+.about h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about ul {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+
+/* TEAM SECTION */
+
+.team {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.member:hover {
+    transform: translateY(-5px);
+}
+
+.member img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #333;
+}
+
+
+/* ============================= */
+/* CONTACT PAGE */
+/* ============================= */
+
+.contact-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
 .contact-form {
     max-width: 400px;
     margin: 20px auto;
@@ -87,6 +218,7 @@ a {
     flex-direction: column;
     gap: 10px;
 }
+
 .contact-form input,
 .contact-form textarea {
     padding: 8px;
@@ -94,7 +226,6 @@ a {
     border: 1px solid #ccc;
 }
 
-/* 3.5.2 Hover effect for submit button */
 .contact-form button {
     padding: 10px;
     background-color: #333;
@@ -103,16 +234,76 @@ a {
     border-radius: 4px;
     cursor: pointer;
 }
+
 .contact-form button:hover {
     background-color: #555;
 }
 
-/* 3.6 FOOTER STYLING */
-/* 3.6.1 Dark background, white text */
-/* 3.6.2 Centered text */
+.contact-details {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-details li {
+    margin-bottom: 10px;
+}
+
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
 footer {
     background-color: #222;
     color: white;
     text-align: center;
     padding: 15px;
+}
+
+
+/* ============================= */
+/* 4. RESPONSIVE DESIGN */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .three-columns {
+        flex-direction: column;
+    }
+
+    .team {
+        flex-direction: column;
+    }
+
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    body {
+        font-size: 14px;
+    }
 }
