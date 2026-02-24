@@ -97,6 +97,14 @@ a {
     border-radius: 8px;
 }
 
+/* ============================= */
+/* LINK COLOUR */
+/* ============================= */
+.social a {
+        color: white;
+        text-decoration: none; /* ja nevēlies pasvītrojumu */
+    }
+
 
 /* ============================= */
 /* FEATURED SECTION */
