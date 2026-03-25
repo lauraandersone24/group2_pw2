@@ -10,10 +10,14 @@
 </head>
 <body>
 
-    <!-- ✅ Bootstrap Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Cat Website</a>
+
+            <button id="themeToggle" class="btn btn-outline-dark ms-2">
+                🌙
+            </button>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -21,24 +25,19 @@
 
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cats.html">Cats</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cats.html">Cats</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- ✅ Contact Form -->
+    <!-- Error box -->
+    <div id="errorBox" class="container mt-3"></div>
+
+    <!-- Contact Form -->
     <section class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -46,7 +45,7 @@
                 <div class="shadow p-4 bg-white rounded">
                     <h2 class="text-center mb-4">Contact Us</h2>
 
-                    <form class="contact-form">
+                    <form id="contactForm">
 
                         <div class="mb-3">
                             <label class="form-label">Full Name</label>
@@ -90,6 +89,60 @@
     </footer>
 
     <script src="js/script.js"></script>
+
+    <!-- 🔧 CONTACT FORM LOGIC -->
+    <script>
+        const form = document.getElementById("contactForm");
+const errorBox = document.getElementById("errorBox");
+
+if (form) {
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const name = form.fullname.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+
+        errorBox.innerHTML = "";
+
+        let errors = [];
+
+        // NAME
+        if (name.length < 2) {
+            errors.push("Name must be at least 2 characters.");
+        }
+
+        // EMAIL (REGEX)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            errors.push("Enter a valid email address.");
+        }
+
+        // MESSAGE
+        if (message.length < 5) {
+            errors.push("Message must be at least 5 characters.");
+        }
+
+        if (errors.length > 0) {
+            errorBox.innerHTML = `
+                <div class="alert alert-danger">
+                    ${errors.join("<br>")}
+                </div>
+            `;
+            return;
+        }
+
+        errorBox.innerHTML = `
+            <div class="alert alert-success">
+                Message sent successfully!
+            </div>
+        `;
+
+        form.reset();
+    });
+}
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

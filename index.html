@@ -11,9 +11,14 @@
 <body>
 
     <!-- ✅ Bootstrap Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Cat Website</a>
+
+            <!-- 🌙 DARK MODE BUTTON -->
+            <button id="themeToggle" class="btn btn-outline-dark ms-2">
+                🌙
+            </button>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -38,33 +43,29 @@
         </div>
     </nav>
 
-    <!-- ✅ Bootstrap Hero (Jumbotron style) -->
+    <!-- ✅ Hero -->
     <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-8">
+        <div class="container text-center">
 
-                    <h1 class="display-4">Welcome to Cat Paradise</h1>
-                    <p class="lead">
-                        Learn about cute cats, their habits and daily life.
-                    </p>
+            <h1 class="display-4">Welcome to Cat Paradise</h1>
+            <p class="lead">
+                Learn about cute cats, their habits and daily life.
+            </p>
 
-                    <a href="cats.html" class="btn btn-dark btn-lg mt-3">
-                        Learn More
-                    </a>
+            <a href="cats.html" class="btn btn-dark btn-lg mt-3">
+                Learn More
+            </a>
 
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Featured section -->
+    <!-- Featured -->
     <section class="featured">
         <h2>Why We Love Cats</h2>
         <p>Cats are playful, elegant, and perfect companions for cozy living.</p>
     </section>
 
-    <!-- Three-column section -->
+    <!-- Columns -->
     <section class="three-columns">
         <div class="column">
             <h3>Playful</h3>
@@ -90,7 +91,10 @@
         </p>
     </footer>
 
+    <!-- ✅ IMPORTANT: JS jābūt PIRMS </body> -->
     <script src="js/script.js"></script>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
