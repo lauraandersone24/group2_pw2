@@ -36,39 +36,7 @@ a {
 /* ============================= */
 /* 3.2 NAVIGATION BAR */
 /* ============================= */
-
-.navbar {
-    background-color: #333;
-}
-
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 10px 20px;
-    display: flex; /* place items horizontally */
-}
-
-/* Spacing between menu items */
-.navbar li {
-    margin-right: 20px;
-}
-
-/* Menu links styling */
-.navbar a {
-    color: white;
-    padding: 5px 0;
-}
-
-/* Hover underline on links */
-.navbar a:hover {
-    text-decoration: underline;
-}
-
-/* Highlight the active page in the menu */
-.navbar a.active {
-    font-weight: bold;
-    border-bottom: 2px solid white;
-}
+/* Bootstrap navbar is used, so old custom navbar styles were removed */
 
 
 /* ============================= */
@@ -109,6 +77,12 @@ a {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.three-columns .column:hover {
+    transform: translateY(-5px);
 }
 
 
@@ -119,7 +93,7 @@ a {
 /* Makes footer social media links white */
 .social a {
     color: white;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 
@@ -129,8 +103,8 @@ a {
 
 .center-text {
     text-align: center;
-    list-style-position: inside; /* punkti būs kopā ar tekstu */
-    padding-left: 0;             /* lai nav lieks atkāpiens */
+    list-style-position: inside;
+    padding-left: 0;
 }
 
 
@@ -138,7 +112,6 @@ a {
 /* FEATURED SECTION */
 /* ============================= */
 
-/* Highlighted informational box ("card") */
 .featured {
     padding: 40px 20px;
     text-align: center;
@@ -157,7 +130,6 @@ a {
     padding: 40px 20px;
 }
 
-/* Service item card: image + text */
 .service-item {
     display: flex;
     align-items: center;
@@ -167,15 +139,13 @@ a {
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: 0.3s; /* smooth hover animation */
+    transition: 0.3s;
 }
 
-/* Floating effect on hover */
 .service-item:hover {
     transform: translateY(-5px);
 }
 
-/* Service image style */
 .service-item img {
     width: 120px;
     height: 120px;
@@ -183,7 +153,6 @@ a {
     border-radius: 10px;
 }
 
-/* Remove top margin on service titles */
 .service-item h2 {
     margin-top: 0;
 }
@@ -309,7 +278,6 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
-
     margin-top: auto;
 }
 
@@ -319,12 +287,6 @@ footer {
 /* ============================= */
 
 @media (max-width: 768px) {
-
-    .navbar ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .three-columns {
         flex-direction: column;
     }
